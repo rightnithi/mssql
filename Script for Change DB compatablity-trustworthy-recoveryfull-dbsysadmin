@@ -1,0 +1,17 @@
+#Script for Change DB compatablity-trustworthy-recoveryfull-dbsysadmin.
+USE [master]
+GO
+ALTER DATABASE [WorkEngine] SET COMPATIBILITY_LEVEL = 150
+GO
+USE [master]
+GO
+ALTER DATABASE [WorkEngine] SET TRUSTWORTHY ON;
+GO
+USE [master]
+GO
+ALTER DATABASE [WorkEngine] SET RECOVERY FULL WITH NO_WAIT
+GO
+USE [WorkEngine]
+GO
+ALTER AUTHORIZATION ON DATABASE::[WorkEngine] TO [sys-admin]
+GO
